@@ -43,14 +43,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/order/proses', [OrderController::class, 'prosesOrder'])->name('pelanggan.order.proses');
     
 
-    
+
     // Halaman Pembayaran (Token Midtrans)
     // Tambahkan route ini ke dalam group middleware auth yang sudah ada --
  
     // Halaman Pembayaran Manual
-    Route::get('/pembayaran/{id}', [OrderController::class, 'pembayaran'])->name('pelanggan.pembayaran');
-    Route::post('/pembayaran/{id}/upload', [OrderController::class, 'uploadBukti'])->name('pelanggan.pembayaran.upload');
-    Route::get('/pembayaran/detail/{id}', [OrderController::class, 'detailPesanan'])->name('pelanggan.pembayaran.detail');
     // Keranjang & Rating
     Route::post('/keranjang/tambah/{id}', [CartController::class, 'add'])->name('cart.add');
     Route::post('/keranjang/hapus/{id}', [CartController::class, 'remove'])->name('cart.remove');
@@ -74,3 +71,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/laporan/ekspor', [AdminController::class, 'eksporCsv'])->name('laporan.ekspor');
 });
 
+Route::get('/pembayaran/{id}', [OrderController::class, 'pembayaran'])->name('pelanggan.pembayaran');
+    Route::post('/pembayaran/{id}/upload', [OrderController::class, 'uploadBukti'])->name('pelanggan.pembayaran.upload');
+    Route::get('/pembayaran/detail/{id}', [OrderController::class, 'detailPesanan'])->name('pelanggan.pembayaran.detail');
