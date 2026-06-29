@@ -324,7 +324,7 @@
              style="background: linear-gradient(180deg, rgba(255,255,255,0.12), transparent);" aria-hidden="true"></div>
 
         <video class="w-full h-full object-cover relative z-0" controls autoplay muted loop>
-            <source src="{{ asset('storage/vidio/video_catering.mp4') }}" type="video/mp4">
+            <<source src="{{ asset('storage/vidio/video_catering.mp4') }}" type="video/mp4">
             Browser Anda tidak mendukung tag video.
         </video>
 
