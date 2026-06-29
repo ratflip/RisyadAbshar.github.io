@@ -42,6 +42,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/order/{id?}', [OrderController::class, 'showPage'])->name('pelanggan.order');
     Route::post('/order/proses', [OrderController::class, 'prosesOrder'])->name('pelanggan.order.proses');
     
+
+    
     // Halaman Pembayaran (Token Midtrans)
     // Tambahkan route ini ke dalam group middleware auth yang sudah ada --
  
